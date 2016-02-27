@@ -124,13 +124,13 @@ RootFS for ARM Linux guest (replace all `<>` brackets based on your workspace):
     - INITRAMFS cpio image
 
         ```bash
-        cd ./_install; sudo find ./ | cpio -o -H newc > ../rootfs.img; cd -
+        cd ./_install; find ./ | fakeroot cpio -o -H newc > ../rootfs.img; cd -
         ```
 
     - OR, INITRAMFS compressed cpio image
 
         ```bash
-        cd ./_install; sudo find ./ | cpio -o -H newc | gzip -9 > ../rootfs.img; cd -
+        cd ./_install; find ./ | fakeroot cpio -o -H newc | gzip -9 > ../rootfs.img; cd -
         ```
 
     - OR, INITRD etx2 image (legacy)
